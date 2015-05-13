@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FinalFabianHerrera</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <header style = "background-color:red">
+    <br>
+    <h1 style = "text-align:center"> Yummy Tummy </h1>
+    <div style = "text-align:center">
+    <ul id = "dul">
+      <li style="margin-left:-5%" id = "dli"> <%= link_to "Home", root_path %> </li>
+      <li id ="dli"> <%= link_to "Easy Recipes", :controller => "visitor", :action => "easy" %> </li>
+      <li id ="dli"> <%= link_to "Challenging Recipes", :controller => "visitor", :action => "difficult" %>  </li>
+      <li id = "dli"> <%= link_to "Cheap Recipes", :controller => "visitor", :action => "cheap" %> </li>
+    </ul>
+      <hr>
+  </div>
+  </header>
+<body>
+    <br>
+  <div id = "box">
+    <h3 style = "text-align:center; background-color:white"> New Feature! You can now search by Chef! </h3>
+    <hr>
+    <ul>
+      <li id = "list"> <%= link_to "Chef Rachel's Recipes", :controller => "chef", :action => "rachel" %> </li>
+      <br>
+      <li id = "list"> <%= link_to "Chef Sandra's Recipes", :controller => "chef", :action => "sandra" %>  </li>
+      <br>
+      <li id = "list"> <%= link_to "Chef Paula's Recipes", :controller => "chef", :action => "paula" %> </li>
+      <br>
+    </ul>  
+  </div>
+<%= yield %>
+<footer class="footer">
+   <small>
+     Created by: Fabian Herrera
+   </small>
+</footer>
+
+</body>
+</html>

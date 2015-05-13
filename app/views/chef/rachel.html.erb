@@ -1,0 +1,17 @@
+<div style="float:right; width:80%">
+  <h1> Recipes by Chef Rachel </h1>
+<% for e in @recipe do %>
+  <%if e.chef_id == @chef.find_by_name("Rachel").id%>
+  <div>
+    <h2> <%= e.title %> (<%=e.genre%>) by Chef: <%= @chef.find(e.chef_id).name%> </h2>
+    <%= e.ingredients.html_safe %>
+    <br>
+    Directions: <%= e.directions %>
+    <br>
+    Feeds: <%= e.output %>
+    <br>
+    Costs: <%= e.cost %>
+  </div>
+  <%end%>
+<%end%>
+</div>

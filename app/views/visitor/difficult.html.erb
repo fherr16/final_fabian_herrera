@@ -1,0 +1,19 @@
+<div style="float:right; width:80%">
+  <h1> Our Difficult Recipes </h1>
+<% for e in @recipe do %>
+  <%if e.difficulty == "difficult"%>
+  <div>
+    <h2> <%= e.title %> (<%=e.genre%>) by Chef: <%= @chef.find(e.chef_id).name%> </h2>
+    <%= e.ingredients.html_safe %>
+    <br>
+    Directions: <%= e.directions %>
+    <br>
+    Feeds: <%= e.output %>
+    <br>
+    Costs: <%= e.cost %>
+  </div>
+  <%end%>
+<%end%>
+</div>
+
+
